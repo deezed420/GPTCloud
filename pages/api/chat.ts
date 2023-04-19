@@ -8,7 +8,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: "pk-yvKRjKhttFJPgeeysUsfIJCKfgpXgUFTuFXqaHbssudOdeHC",
+	basePath: "https://api.pawan.krd/v1",
 });
 
 const openai = new OpenAIApi(configuration);
@@ -20,11 +21,11 @@ async function chatHandler(
   const completion = await openai.createChatCompletion({
     // Downgraded to GPT-3.5 due to high traffic. Sorry for the inconvenience.
     // If you have access to GPT-4, simply change the model to "gpt-4"
-    model: "gpt-4",
+    model: "gpt-3.5-turbo",
     messages: [
       {
         role: ChatCompletionRequestMessageRoleEnum.System,
-        content: "You are a helpful assistant.",
+        content: "You are a helpful assistant named GPTCloud.",
       },
       
     ].concat(req.body.messages),

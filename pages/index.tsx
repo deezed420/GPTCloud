@@ -98,14 +98,14 @@ useEffect(() => {
   return (
     <>
       <Head>
-        <title>Chat UI</title>
+        <title>GPTCloud</title>
         <meta name="description" content="OpenAI interface" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.topnav}>
         <div className={styles.navlogo}>
-          <Link href="/">Chat UI</Link>
+          <Link href="/">GPTCloud</Link>
         </div>
         <div className={styles.navlinks}>
           <a
@@ -210,9 +210,9 @@ useEffect(() => {
           </div>
           <div className={styles.footer}>
             <p>
-              Powered by{" "}
-              <a href="https://openai.com/" target="_blank">
-                OpenAI
+              Made by{" "}
+              <a href="https://github.com/Deezed420" target="_blank">
+                Deezed420
               </a>
               . 
             </p>
