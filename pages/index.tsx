@@ -109,10 +109,10 @@ useEffect(() => {
         </div>
         <div className={styles.navlinks}>
           <a
-            href="https://platform.openai.com/docs/models/gpt-4"
+            href="https://github.com/deezed420/GPTCloud"
             target="_blank"
           >
-            Docs
+            Github Repo
           </a>
           
         </div>
