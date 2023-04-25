@@ -9,7 +9,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 const configuration = new Configuration({
   apiKey: "pk-yvKRjKhttFJPgeeysUsfIJCKfgpXgUFTuFXqaHbssudOdeHC",
-	basePath: "https://gptcloud.enderdabender.repl.co/v1",
+	basePath: "https://f579-216-181-227-167.ngrok-free.app/v1",
 });
 
 const openai = new OpenAIApi(configuration);
