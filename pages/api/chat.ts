@@ -1,35 +1,18 @@
-// Make sure to add OPENAI_API_KEY as a secret
-
-import {
-  Configuration,
-  OpenAIApi,
-  ChatCompletionRequestMessageRoleEnum,} from "openai";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-
-const configuration = new Configuration({
-  apiKey: "pk-yvKRjKhttFJPgeeysUsfIJCKfgpXgUFTuFXqaHbssudOdeHC",
-	basePath: "https://f579-216-181-227-167.ngrok-free.app/v1",
-});
-
-const openai = new OpenAIApi(configuration);
 
 async function chatHandler(
   req: NextApiRequest,
   res: NextApiResponse
-) {
-  const completion = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: [
-      {
-        role: ChatCompletionRequestMessageRoleEnum.System,
-        content: "You are a helpful assistant named GPTCloud.",
-      },
-      
-    ].concat(req.body.messages),
-    temperature: 0,
-  });
-  res.status(200).json({ result: completion.data.choices[0].message });
-}
+)
+{const request = new XMLHttpRequest();
+request.open('POST', 'https://gptcloud.enderdabender.repl.co/v1/chat/completions', true);
+request.setRequestHeader('Authorization', 'Bearer pk-yvKRjKhttFJPgeeysUsfIJCKfgpXgUFTuFXqaHbssudOdeHC');
+request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+request.send(JSON.stringify({
+    "model": "gpt-3.5-turbo",
+    "messages": [
+      {"role": "system", "content": "You are a helpful assistant named GPTCloud based on OpenAI ChatGPT"},
+    ].concat(req.body.messages)
+}));}
 
 export default chatHandler;
